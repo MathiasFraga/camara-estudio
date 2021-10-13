@@ -1,9 +1,15 @@
 import NavBar from './components/navBar/navBar.js';
+import ListContainer from './components/ItemListContainer/ItemListContainer.js';
+import Riquelme from './Riquelme.jpg'
+import './App.css'
 
 function App() {
   return (
-    <><NavBar /><div>
-      <h1>Contactanos para más información</h1>
+    <><NavBar/>
+    <div>
+      <ListContainer text="Curso fotografía deportiva" />
+      <div className="foto"><img src={Riquelme} alt="" /></div>
+      <ListContainer/>
     </div></>
   );
 }

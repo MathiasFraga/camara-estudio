@@ -1,20 +1,25 @@
 import React from "react";
 import './styleNav.css';
+import CartWidget from "../CartWidget/cartWidget.js";
 
-const NavBar= () => {
+const NavBar = () => {
   return (
-    <nav className="nav">
-        <div className="containerTitle">
-            <h3>Camara Estudio</h3>
+    <nav className="nav navbar navbar-expand-lg navbar-dark ">
+      <div class="container-fluid containerTitle">
+        <h3>Camara Estudio</h3>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className=" linksNav collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul className="navbar-nav navUl">
+            <li className="nav-link navLi" aria-current="page" href="#">Servicios</li>
+            <li className="nav-link navLi" href="#">Cursos</li>
+            <li className="nav-link navLi" href="#">Nosotros</li>
+            <li className="nav-link navLi" href="#">Contacto</li>
+          </ul>
         </div>
-        <div className ="linksNav">
-            <ul className="navUl">
-                <li className="navLi">Nuestros Servicios</li>
-                <li className="navLi">Cursos</li>
-                <li className="navLi">Nosotros</li>
-                <li className="navLi">Contacto</li>
-    </ul>
-    </div>
+        <CartWidget />
+      </div>
     </nav>
   );
 }
