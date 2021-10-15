@@ -6,7 +6,7 @@ import './App.css'
 function App() {
   return (
    <><NavBar /><div>
-      <ListContainer text="Curso fotografía deportiva" />
+      <ListContainer greeting="Curso fotografía deportiva" />
         <div className="foto"><img src={Riquelme} alt="" /></div>
       <ListContainer />
     </div></>
