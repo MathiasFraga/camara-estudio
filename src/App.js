@@ -1,4 +1,4 @@
-import NavBar from './containers/navBar/navBar.js';
+import NavBar from './containers/NavBar/navBar.js';
 import ListContainer from './containers/ItemListContainer/ItemListContainer.js';
 import Riquelme from './Riquelme.jpg'
 import './App.css'
