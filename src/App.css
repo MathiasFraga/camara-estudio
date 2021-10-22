@@ -8,11 +8,7 @@
   background-color: #f6e1c58a;
 }
 
-.hCupos {
-  display: flex;
-  justify-content: center;
-  font-size: 25px;
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
