@@ -1,6 +1,6 @@
 import './itemCount.css';
 
-const StockContador= ({sumarProducto,value,quitarProducto}) => {
+const StockContador = ({sumarProducto,value,quitarProducto}) => {
     return (
       <div className="containerCount">
           <p className="pCount">{value}</p>
@@ -9,5 +9,6 @@ const StockContador= ({sumarProducto,value,quitarProducto}) => {
       </div>
     );
   }  
+  
   export default StockContador;
     
