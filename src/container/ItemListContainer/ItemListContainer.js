@@ -1,13 +1,10 @@
 import './ItemListContainer.css';
 import ItemList from '../../components/ItemList/itemList';
 import { useEffect, useState } from "react";
-import ProgramaCursos from "../../ProgramaCursos.json";
 
 
-
-
-const ListContainer= (props) => {
-  
+const ListContainer= (props) => {  
+    
   const [cursos, setCursos] = useState([]);
 
     const getPrograma = (programa) =>
@@ -22,7 +19,7 @@ const ListContainer= (props) => {
         });
 
     useEffect(() => {
-        getPrograma(ProgramaCursos)
+        getPrograma(ItemList)
             .then((res) => setCursos(res))
             .catch((err) => console.log(err));
     }, []);
@@ -32,10 +29,7 @@ const ListContainer= (props) => {
     <div>
         <div className ="hcupos contenedorCursos">{props.greeting}</div>
         <div className="cursosContainer">
-                {cursos ? cursos.map((curso) => (
-                        <ItemList course={curso} key={curso.id} />
-                    ))
-                    : "Cargando los cursos disponibles..."}
+                <ItemList />
             </div>
     </div>
   );
