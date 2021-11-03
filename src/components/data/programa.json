@@ -1,0 +1,23 @@
+[
+    {
+      "id": "Deportes",
+      "title": "Fotografia deportiva",
+      "description": "Seran 20 clases presenciales",
+      "price": 500,
+      "foto": "img/deportiva.png"
+    },
+    {
+        "id": "Eventos",
+        "title": "Fotografia eventos",
+        "description": "Seran 20 clases presenciales",
+        "price": 1500,
+        "foto": "img/eventos.jpg"
+      },
+      {
+        "id": "Empresarial",
+        "title": "Fotografia empresarial",
+        "description": "Seran 40 clases presenciales",
+        "price": 2000,
+        "foto": "img/empresariales.jpg"
+      }
+  ]

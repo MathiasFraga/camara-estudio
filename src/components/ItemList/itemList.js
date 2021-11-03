@@ -1,43 +1,39 @@
 import './itemList.css'
 import Card from '../ItemDetail/itemDetail';
-import deportiva from '../img/deportiva.jpg';
-import empresariales from '../img/empresariales.jpg';
-import eventos from '../img/eventos.jpg';
+import ProgramaCursos from '../data/programa.json'
+import { useEffect, useState } from "react";
 
-
-const programa = [
-    {
-      "id": "Deportes",
-      "title": "Fotografia deportiva",
-      "description": "Seran 20 clases presenciales",
-      "price": 500,
-      "foto": deportiva
-    },
-    {
-        "id": "Eventos",
-        "title": "Fotografia eventos",
-        "description": "Seran 20 clases presenciales",
-        "price": 1500,
-        "foto": eventos
-      },
-      {
-        "id": "Empresarial",
-        "title": "Fotografia empresarial",
-        "description": "Seran 40 clases presenciales",
-        "price": 2000,
-        "foto": empresariales
-      }
-  ]
 
 const ItemList = () => {
+const [cursos, setCursos] = useState([]);
+
+const getPrograma = (programa) =>
+    new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (programa) {
+                resolve(programa);
+            } else {
+                reject("No hay nada para mostrar");
+            }
+        }, 2000);
+    });
+
+useEffect(() => {
+    getPrograma(ProgramaCursos)
+        .then((res) => setCursos(res))
+        .catch((err) => console.log(err));
+}, []);
+
+
     return (
         <div className="container d-flex justify-content-center align-items-center h-100">
           <div className="row">
-            {programa.map(({ title, foto, description, id, price }) => (
-              <div className="col-md-4" key={id}>
-                <Card foto={foto} title={title} description={description} price={price} />
+            {cursos ? cursos.map((curso) => (
+              <div className="col-md-4" key={curso.id}>
+                <Card foto={curso.foto} title={curso.title} description={curso.description} price={curso.price} />
               </div>
-            ))}
+            ))
+            : "Cargando los cursos disponibles..."}
           </div>
         </div>
       );
