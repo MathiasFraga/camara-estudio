@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import './itemDetail.css';
-import StockContador from '../ItemCount/ItemCount';
+import StockContador from '../ItemCount/itemCount';
 
 
-const Card = ({title, description, price, foto}) => {
+const ItemDetails = ({title, description, price, foto}) => {
 
     const [cupos, setCupos]= useState(1)
     function add() {
@@ -39,6 +39,6 @@ const Card = ({title, description, price, foto}) => {
         )
 }
 
-export default Card;
+export default ItemDetails;
 
 
