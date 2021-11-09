@@ -1,5 +1,5 @@
 import './itemList.css'
-import ItemDetails from '../ItemDetail/itemDetail';
+import Details from '../ItemDetail/itemDetail';
 import ProgramaCursos from '../data/programa.json'
 import { useEffect, useState } from "react";
 
@@ -30,7 +30,7 @@ useEffect(() => {
           <div className="row">
             {cursos ? cursos.map((curso) => (
               <div className="col-md-4" key={curso.id}>
-                <ItemDetails foto={curso.foto} title={curso.title} description={curso.description} price={curso.price} />
+                <Details foto={curso.foto} title={curso.title} description={curso.description} price={curso.price} />
               </div>
             ))
             : "Cargando los cursos disponibles..."}
