@@ -1,6 +1,7 @@
 [
     {
       "id": "Deportes",
+      "category": "Deportiva",
       "title": "Fotografia deportiva",
       "description": "Seran 20 clases presenciales",
       "price": 500,
@@ -8,6 +9,7 @@
     },
     {
         "id": "Eventos",
+        "category": "De eventos",
         "title": "Fotografia eventos",
         "description": "Seran 20 clases presenciales",
         "price": 1500,
@@ -15,6 +17,7 @@
       },
       {
         "id": "Empresarial",
+        "category": "De empresas",
         "title": "Fotografia empresarial",
         "description": "Seran 40 clases presenciales",
         "price": 2000,

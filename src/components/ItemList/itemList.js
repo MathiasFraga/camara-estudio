@@ -1,42 +1,18 @@
 import './itemList.css'
-import Details from '../ItemDetail/itemDetail';
-import ProgramaCursos from '../data/programa.json'
-import { useEffect, useState } from "react";
+import Item from '../item/item'
 
-
-const ItemList = () => {
-const [cursos, setCursos] = useState([]);
-
-const getPrograma = (programa) =>
-    new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (programa) {
-                resolve(programa);
-            } else {
-                reject("No hay nada para mostrar");
-            }
-        }, 2000);
-    });
-
-useEffect(() => {
-    getPrograma(ProgramaCursos)
-        .then((res) => setCursos(res))
-        .catch((err) => console.log(err));
-}, []);
-
+const ItemList = ({cursos}) => {
 
     return (
         <div className="container d-flex justify-content-center align-items-center h-100">
           <div className="row">
-            {cursos ? cursos.map((curso) => (
-              <div className="col-md-4" key={curso.id}>
-                <Details foto={curso.foto} title={curso.title} description={curso.description} price={curso.price} />
-              </div>
-            ))
-            : "Cargando los cursos disponibles..."}
-          </div>
-        </div>
-      );
-    }
+        {cursos.length
+          ? cursos.map((course) => <Item curso={course} key={course.id}/>)
+          : "Cargando productos..."}
+    </div>
+    </div>
+    );
+};
+
 
 export default ItemList;

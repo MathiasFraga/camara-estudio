@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import React, { useState } from "react";
 import './itemDetail.css';
 import StockContador from '../ItemCount/itemCount';
 
 
-const ItemDetails = ({title, description, price, foto}) => {
+const ItemDetails = ({curso}) => {
 
     const [cupos, setCupos]= useState(1)
     function add() {
@@ -24,13 +24,13 @@ const ItemDetails = ({title, description, price, foto}) => {
             <>
     <div className="card text-center bg-dark animate__animated animate__fadeInUp">
       <div className="overflow">
-        <img src={foto} alt="a wallpaper" className="card-img-top" />
+        <img src={curso.foto} alt="a wallpaper" className="card-img-top" />
       </div>
       <div className="card-body text-light">
-        <h4 className="card-title">{title}</h4>
+        <h4 className="card-title">{curso.title}</h4>
         <p className="card-text text-secondary">
-          {description}</p>
-        <p> {Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(price)}</p>
+          {curso.description}</p>
+        <p> {Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(curso.price)}</p>
         <StockContador value={cupos} sumarProducto={add} quitarProducto ={remove}/>
         <div className="addToCart">Añadir al carrito</div>
       </div>
