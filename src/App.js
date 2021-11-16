@@ -10,15 +10,9 @@ function App() {
       <BrowserRouter>
         <NavBar/>
         <Routes>
-          <Route exact path="/">
-              <ListContainer greeting="Camara Estudio" />
-          </Route>
-          <Route exact path="/categoria/:categoryID">
-               <ListContainer greeting="Cursos y servicios de Fotografia" />
-          </Route>
-          <Route exact path="/item/:itemID">
-               <ItemDetailContainer />
-          </Route>
+          <Route exact path="/" element ={<ListContainer greeting="Camara Estudio" />} />
+          <Route exact path="/categoria/:categoryID" element ={<ListContainer greeting="Cursos y servicios de Fotografia" />}/>
+          <Route exact path="/item/:itemID" element = {<ItemDetailContainer />} />
         </Routes>
       </BrowserRouter>
     );

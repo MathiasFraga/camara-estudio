@@ -2,12 +2,12 @@ import './itemCount.css';
 import { Button } from "react-bootstrap";
 
 
-const StockContador = ({sumarProducto,value,quitarProducto}) => {
+const StockContador = ({sumarProducto,value,quitarProducto,onAdd}) => {
     return (
       <div className="containerCount">
           <p className="pCount">{value}</p>
-          <button onClick ={sumarProducto} className="btnCount">+</button>
-          <button onClick ={quitarProducto} className="btnCount">-</button>     
+          <Button onClick ={sumarProducto} className="btnCount">+</Button>
+          <Button onClick ={quitarProducto} className="btnCount">-</Button>     
           <Button variant="primary" onClick={onAdd}>Añadir al carrito</Button>     
       </div>
     );

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './itemDetail.css';
 import StockContador from '../ItemCount/itemCount';
@@ -35,8 +36,7 @@ const ItemDetails = ({curso}) => {
       </div>
       <div className="card-body text-light">
         <h4 className="card-title">{curso.title}</h4>
-        <p className="card-text text-secondary">
-          {curso.description}</p>
+        <p className="card-text text-secondary">{curso.description}</p>
         <p> {Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(curso.price)}</p>
         {flag 
         ? (<StockContador value={cupos} sumarProducto={add} quitarProducto ={remove} onAdd={addToCart}/>) 
