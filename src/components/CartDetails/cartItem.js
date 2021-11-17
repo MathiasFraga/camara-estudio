@@ -10,7 +10,7 @@ const CartItem = ({ item, onRefresh }) => {
 
     const onAddHandle = (counter, itemTotal) => {
         if (counter > 0) {
-            item.price= item.price * counter
+            item.price = item.price * counter
             setItemTotal(item.price)
             onRefresh(itemTotal)
         } else if (counter === 0) {
@@ -19,8 +19,8 @@ const CartItem = ({ item, onRefresh }) => {
     };
 
     return (
-        <div className="container-fluid row col-11 mt-5 align-content-center justify-content-center">
-            <div className="col-12 col-lg-5 align-self-center">
+        <div className="container-fluid row col-12 col-md-7 mt-5 align-content-center justify-content-center">
+            <div className="col-12 col-sm-9 col-md-6 align-self-center">
                 <img className="img-fluid" src={item.foto} alt="foto" />
             </div>
             <div className="col-12 col-lg-6 mb-3 row justify-content-center">
@@ -42,55 +42,25 @@ const CartItem = ({ item, onRefresh }) => {
                             Curso
                         </button>
                         <ul
-                            className="dropdown-menu menuCursos"
+                            className="dropdown-menu "
                             aria-labelledby="dropdownMenuButton1"
                         >
                             <li>
-                                <a className="dropdown-item" href="/#">
-                                    <b>4</b> <span style={{ fontSize: `80%` }}>(14,9 mm)</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="/#">
-                                    <b>5</b> <span style={{ fontSize: `80%` }}>(15,6 mm)</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="/#">
-                                    <b>6</b> <span style={{ fontSize: `80%` }}>(16,5 mm)</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="/#">
-                                    <b>7</b> <span style={{ fontSize: `80%` }}>(17,2 mm)</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="/#">
-                                    <b>8</b> <span style={{ fontSize: `80%` }}>(18,0 mm)</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="/#">
-                                    <b>9</b> <span style={{ fontSize: `80%` }}>(18,9 mm)</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="/#">
-                                    <b>10</b> <span style={{ fontSize: `80%` }}>(19,7 mm)</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="/#">
-                                    <b>11</b> <span style={{ fontSize: `80%` }}>(20,6 mm)</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="/#">
-                                    <b>12</b> <span style={{ fontSize: `80%` }}>(21,5 mm)</span>
-                                </a>
-                            </li>
-                        </ul>
+                  <a className="dropdown-item" href="/#">
+                    <b>4</b> <span style={{ fontSize: `80%` }}>(Fotografia deportiva)</span>
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="/#">
+                    <b>5</b> <span style={{ fontSize: `80%` }}>(Fotografia de eventos)</span>
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="/#">
+                    <b>6</b> <span style={{ fontSize: `80%` }}>(Fotografia empresarial)</span>
+                  </a>
+                </li>
+  </ul>
                     </div>
                         </div>
 

@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 
 const ItemDetails = ({curso}) => {
 
-    const { addToCart, showHideCart } = useContext(CartContext);
+  const { addToCart, showHideCart } = useContext(CartContext);
   
   const onAddHandle = (counter) => {
     showHideCart(false)
@@ -85,7 +85,6 @@ const ItemDetails = ({curso}) => {
               </p>
             </div>
   
-            {/* <!-- Add to Cart Form --> */}
             {<StockContador inicial={0} stock={curso.stock} id={curso.id} onAdd={onAddHandle} texto='Agregar al carrito' /> }
           </div>
           
