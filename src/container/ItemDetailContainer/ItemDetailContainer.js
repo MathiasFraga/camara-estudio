@@ -1,28 +1,24 @@
 import ItemDetails from '../../components/ItemDetail/itemDetail';
-import ProgramaCursos from '../../components/data/programa.json'
+/* import ProgramaCursos from '../../components/data/programa.json' */
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { getDoc, doc } from "firebase/firestore";
+import { getFirestore } from "../../firebase/index";
 
 
 function ItemDetailContainer() {
 	const [cursos, setCursos] = useState([]);
 	const{ itemID } = useParams();
 
-	const getPrograma = (programa) =>
-		new Promise((resolve, reject) => {
-			setTimeout(() => {
-				if (programa) {
-					resolve(programa);
-				} else {
-					reject("No hay nada para mostrar");
-				}
-			}, 2000);
-		});
-	
+
 	useEffect(() => {
-		getPrograma(ProgramaCursos)
-		.then((res) => {setCursos(res.find((course) => course.id===itemID));})
-		.catch((err) => console.log(err));
+		const db = getFirestore();
+		const theItem = doc(db, 'items', itemID);
+		getDoc(theItem).then((snapshot) => {
+			if (snapshot.exists()) {
+				setCursos(snapshot.data());
+			}
+		});
 	}, [itemID]);
 	
 	
