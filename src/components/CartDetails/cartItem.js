@@ -10,6 +10,7 @@ const CartItem = ({ item, onRefresh }) => {
 
     const onAddHandle = (counter, itemTotal) => {
         if (counter > 0) {
+            item.quantity=counter
             item.price = item.price * counter
             setItemTotal(item.price)
             onRefresh(itemTotal)

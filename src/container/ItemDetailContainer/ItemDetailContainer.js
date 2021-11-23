@@ -1,5 +1,4 @@
 import ItemDetails from '../../components/ItemDetail/itemDetail';
-/* import ProgramaCursos from '../../components/data/programa.json' */
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getDoc, doc } from "firebase/firestore";
